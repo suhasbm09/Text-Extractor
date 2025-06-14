@@ -2,7 +2,7 @@
 
 **Text-Extractor** is a web application that enables users to upload images (JPG, PNG) or PDFs, extract text via **OCR**, and return the results as **structured JSON**. It leverages a React + Vite frontend and a Node.js + Express backend powered by Tesseract.js for robust and accurate text recognition.
 
-[📂 Repository](https://github.com/suhasbm09/Text-Extractor) · [🌐 Live Demo](https://text-extractor.vercel.app)
+[📂 Repository](https://github.com/suhasbm09/Text-Extractor) · [🌐 Live Demo](https://text-extractor-indol.vercel.app)
 
 ---
 
