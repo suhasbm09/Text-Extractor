@@ -49,7 +49,7 @@ function Home() {
 
       navigate("/result", { state: data });
     } catch (err) {
-      alert("❌ Extraction failed: " + err.message);
+      alert(" Extraction failed: " + err.message);
     } finally {
       setLoading(false);
     }
@@ -91,7 +91,7 @@ function Home() {
 
           {file && !fileError && (
             <p className="text-green-400 text-center text-sm sm:text-base">
-              ✅ Selected: {file.name}
+               Selected: {file.name}
             </p>
           )}
           {fileError && (
@@ -118,7 +118,7 @@ function Home() {
                        py-2 sm:py-3 rounded-xl text-sm sm:text-base
                        transition-opacity duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Submit for Extraction
+            Submit
           </button>
         </form>
       </div>

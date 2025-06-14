@@ -32,7 +32,7 @@ function Result() {
   return (
     <div className="min-h-screen  text-white flex flex-col items-center p-4">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cyan-400 mb-6 text-center">
-        OCR Result
+        Extracted Text 
       </h1>
 
       <div className="bg-white/10 border border-white/20 p-4 sm:p-6 md:p-8 rounded-xl shadow-lg w-full max-w-3xl overflow-y-auto max-h-[60vh] space-y-3">
