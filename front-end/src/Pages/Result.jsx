@@ -10,11 +10,11 @@ function Result() {
 
   if (!resultData) {
     return (
-      <div className="text-white flex flex-col items-center justify-center min-h-screen">
-        <h2 className="text-red-400 text-xl mb-4">No data found.</h2>
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex flex-col items-center justify-center p-4">
+        <h2 className="text-2xl sm:text-3xl text-red-400 mb-6">No data found.</h2>
         <button
-          className="bg-blue-600 px-4 py-2 rounded-lg text-white"
           onClick={() => navigate("/")}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-md transition"
         >
           Back to Home
         </button>
@@ -30,30 +30,32 @@ function Result() {
   };
 
   return (
-    <div className="min-h-screen text-white flex flex-col items-center justify-center p-6">
-      <h1 className="text-4xl font-bold text-cyan-400 mb-6">OCR Result</h1>
+    <div className="min-h-screen  text-white flex flex-col items-center p-4">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cyan-400 mb-6 text-center">
+        OCR Result
+      </h1>
 
-      <div className="bg-white/10 border border-white/20 p-6 rounded-xl shadow-lg max-w-3xl w-full space-y-3 text-base leading-relaxed overflow-y-auto max-h-[60vh]">
+      <div className="bg-white/10 border border-white/20 p-4 sm:p-6 md:p-8 rounded-xl shadow-lg w-full max-w-3xl overflow-y-auto max-h-[60vh] space-y-3">
         {resultData.raw_text
           .split("\n")
           .filter((line) => line.trim() !== "")
           .map((line, idx) => (
-            <p key={idx} className="text-white/90">
+            <p key={idx} className="text-sm sm:text-base leading-relaxed text-white/90">
               {line}
             </p>
           ))}
       </div>
 
-      <div className="flex gap-4 mt-8">
+      <div className="flex flex-col sm:flex-row gap-4 mt-6">
         <button
           onClick={handleDownload}
-          className="bg-green-600 hover:bg-green-700 px-5 py-2 rounded-lg font-medium transition-all duration-200"
+          className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-md font-medium transition"
         >
           Download JSON
         </button>
         <button
           onClick={() => navigate("/")}
-          className="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-lg font-medium transition-all duration-200"
+          className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-md font-medium transition"
         >
           Back to Home
         </button>

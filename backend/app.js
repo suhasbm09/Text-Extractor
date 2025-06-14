@@ -13,7 +13,7 @@ app.use(cors());
 
 const upload = multer({
   dest: "uploads/",
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB max
+  limits: { fileSize: 10 * 1024 * 1024 }, 
 });
 
 app.post("/ocr", upload.single("file"), async (req, res) => {
@@ -49,15 +49,14 @@ app.post("/ocr", upload.single("file"), async (req, res) => {
   }
 
   // 3. Determine language(s)
-  // If you let frontend pick: const language = req.body.language || "eng";
-  // Otherwise for “always support all three” just hardcode:
+
   const language = "eng+hin+kan";
 
   try {
-    // Single-step recognize: input path, language string, and options
+    
     const { data: { text } } = await recognize(filePath, language, {
       langPath: path.join(__dirname, "tessdata"),
-      logger: (m) => console.log(m), // optional progress logger
+      
     });
 
     return res.status(200).json({ raw_text: text });
