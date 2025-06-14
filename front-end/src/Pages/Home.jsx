@@ -37,7 +37,7 @@ function Home() {
 
     try {
       
-      const response = await fetch("https://text-extractor-tg7m.onrender.com", {
+      const response = await fetch("https://text-extractor-tg7m.onrender.com/ocr", {
         method: "POST",
         body: formData,
       });
