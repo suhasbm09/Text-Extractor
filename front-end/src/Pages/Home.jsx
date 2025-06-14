@@ -37,7 +37,7 @@ function Home() {
 
     try {
       
-      const response = await fetch(import.meta.env.VITE_API_URL, {
+      const response = await fetch("https://text-extractor-tg7m.onrender.com", {
         method: "POST",
         body: formData,
       });
